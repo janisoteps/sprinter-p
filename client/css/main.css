@@ -1,0 +1,142 @@
+body{
+    font-family: sans-serif;
+    font-size: 0.8rem;
+}
+
+.sprint-selector-row{
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    width: 290px;
+    padding-left: 5px;
+}
+
+.sprint-selector-row:hover{
+    background-color: #cccccc;
+}
+
+.sprint-ticket-list{
+    width: calc(100vw - 16px);
+    z-index: 0;
+}
+
+th{
+    font-weight: 300;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+tr:hover {background-color: #ddd;}
+
+.title-row {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+    max-width: calc(100vw - 16px);
+}
+
+.ticket-description{
+    max-width: 300px;
+    max-height: 100px;
+    font-size: 0.7rem;
+    overflow: scroll;
+    text-align: left;
+}
+
+.ticket-title{
+    max-width: 250px;
+}
+
+.header-bar{
+    z-index: 100;
+    position: absolute;
+    top: 8px;
+    height: 30px;
+    width: calc(100vw - 16px);
+}
+
+
+.sprint-selector-expand-button{
+    background: #ffffff url('../images/baseline-keyboard_arrow_down-24px.svg') no-repeat center;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 0 3px 3px 0;
+    top: 0px;
+    left: 300px;
+}
+
+.content{
+    margin-top: 50px;
+}
+
+.only-tested-filter{
+    position: absolute;
+    top: 0;
+    right: 100px;
+}
+
+.ticket-modal{
+    width: 900px;
+    max-height: 90vh;
+    position: fixed;
+    top: 20px;
+    margin-left: calc(50vw - 450px);
+    z-index: 100;
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    overflow: scroll;
+}
+
+.edit-button{
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.edit-test-text-area{
+    width: 100%;
+}
+
+.close-button{
+    width: 30px;
+    height: 30px;
+    background-size: 24px 24px;
+    border-radius: 15px;
+    position: absolute;
+    margin-top: 0px;
+    right: 0px;
+    cursor: pointer;
+    box-shadow: 1px -1px 3px 0 rgba(0, 0, 0, 0.4);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.ticket-save-button{
+    width: 120px;
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    margin-left: calc(50% - 60px);
+}
+
+.test-steps{
+    min-width: 200px;
+    text-align: left;
+}
+
+.test-outputs{
+    min-width: 200px;
+    text-align: left;
+}
