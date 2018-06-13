@@ -214,34 +214,5 @@ app.get('/api/delete-ticket/:id', function (req, res) {
     });
 });
 
-// app.post('/api/update-ticket', function(req, res){
-//     let ticket_key = req.body.ticket_key;
-//     let ticket_if_tested = req.body.ticket_if_tested;
-//     let ticket_test_steps = req.body.ticket_test_steps;
-//     let ticket_result = req.body.ticket_result;
-//     let ticket_integration = req.body.ticket_integration;
-//     let sprint_id = req.body.sprint_id;
-//
-//     console.log(ticket_key, ticket_if_tested, ticket_test_steps, ticket_result, ticket_integration, sprint_id);
-//
-//     let data = [ticket_if_tested, ticket_test_steps, ticket_result, ticket_integration, ticket_key];
-//
-//     let sql = `UPDATE sprinter_data
-//             SET ticket_if_tested = ?,
-//             ticket_test_steps = ?,
-//             ticket_result = ?,
-//             ticket_integration = ?
-//             WHERE ticket_key = ?`;
-//
-//     db.run(sql, data, function(err) {
-//         if (err) {
-//             return console.error(err.message);
-//         }
-//         console.log(`Row(s) updated: ${this.changes}`);
-//
-//         res.send('updated');
-//     });
-// });
-
 app.use(express.static(__dirname +'./../client')); //serves the index.html
 app.listen(3000); //listens on port 3000 -> http://localhost:3000/

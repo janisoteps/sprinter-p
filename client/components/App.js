@@ -216,6 +216,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-//<input name="showOnlyTested" type="checkbox" onClick={this.handleFilterChange} />
