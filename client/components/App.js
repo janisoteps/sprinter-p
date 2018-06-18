@@ -13,6 +13,7 @@ class App extends Component {
             sprintSelHeight: '30px',
             tickets: [],
             sprintName: '',
+            sprintState: '',
             showOnlyTested: false,
             ticketModalData: 0,
             ticketModalTesting: {},
@@ -58,6 +59,7 @@ class App extends Component {
                     this.setState({
                         tickets: json,
                         sprintName: sprint['name'],
+                        sprintState: sprint['state'],
                         sprintId: sprintId
                     });
                     if(pageLoadFlag !== 1){
@@ -143,7 +145,7 @@ class App extends Component {
 
     render() {
 
-        let SprintSelector = () => this.state.sprints.reverse().map(sprint => {
+        let SprintSelector = () => this.state.sprints.map(sprint => {
                 let sprintName = sprint['name'];
                 let sprintKey = sprint['id'];
 
@@ -182,6 +184,7 @@ class App extends Component {
 
                 <div className="content">
                     <h3>Sprint showing: {this.state.sprintName}</h3>
+                    <h5>Sprint state: {this.state.sprintState}</h5>
                     {this.state.tickets.length > 0 && (
                         <Tickets
                             showOnlyTested={this.state.showOnlyTested}

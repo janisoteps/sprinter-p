@@ -94,8 +94,7 @@ tr:hover {background-color: #ddd;}
     background-color: #FFFFFF;
     box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.4);
     padding: 10px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow: scroll;
 }
 
 .edit-button{
