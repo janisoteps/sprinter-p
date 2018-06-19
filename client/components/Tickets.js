@@ -95,6 +95,17 @@ class Tickets extends Component {
                 };
             }
 
+            let fixVersion;
+            let releaseDate;
+            try{
+                fixVersion = ticket['fields']['fixVersions'][0]['name'];
+                releaseDate = ticket['fields']['fixVersions'][0]['releaseDate'];
+            } catch (e) {
+                fixVersion = '';
+                releaseDate = '';
+            }
+
+
             if(this.props.showOnlyTested === true){
                 if(isTicketTested === 1){
                     return(
@@ -103,7 +114,8 @@ class Tickets extends Component {
                             <th><a href={url}>{ticketKey}</a></th>
                             <th>{issueType}</th>
                             <th className="ticket-title">{summary}</th>
-                            <th><div className="ticket-description">{description}</div></th>
+                            <th>{fixVersion}</th>
+                            <th>{releaseDate}</th>
                             <th>{status}</th>
                             <th>{resolution}</th>
                             <th>{isTicketTested}</th>
@@ -122,7 +134,8 @@ class Tickets extends Component {
                         <th><a href={url}>{ticketKey}</a></th>
                         <th>{issueType}</th>
                         <th className="ticket-title">{summary}</th>
-                        <th><div className="ticket-description">{description}</div></th>
+                        <th>{fixVersion}</th>
+                        <th>{releaseDate}</th>
                         <th>{status}</th>
                         <th>{resolution}</th>
                         <th>{isTicketTested}</th>
@@ -144,7 +157,8 @@ class Tickets extends Component {
                     <th>URL</th>
                     <th>Type</th>
                     <th>Title</th>
-                    <th>Description</th>
+                    <th>Fix Version</th>
+                    <th>Release Date</th>
                     <th>Status</th>
                     <th>Resolution</th>
                     <th>Tested</th>
