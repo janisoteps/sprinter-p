@@ -6,8 +6,8 @@ const sqlite3 = require('sqlite3').verbose();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-let username = 'jdzikevics';
-let password = 'Mierakapi99';
+let username = 'XXXXXXXXXXXXXX';
+let password = 'XXXXXXXXXXXXXX';
 const headers = {
     'Authorization' : 'Basic ' + Base64.encode(username + ":" + password)
 };
