@@ -11,6 +11,7 @@ class EditTicket extends Component {
         this.updateTicketModalTesting = this.updateTicketModalTesting.bind(this);
         this.saveTicketChanges = this.saveTicketChanges.bind(this);
         this.updateTicketModalIfTested = this.updateTicketModalIfTested.bind(this);
+        this.resetTicket = this.resetTicket.bind(this);
     }
 
     // Opens the ticket editing modal
@@ -26,6 +27,18 @@ class EditTicket extends Component {
     // Change boolean if ticket is tested or not
     updateTicketModalIfTested(){
         this.props.updateTicketModalIfTested();
+    }
+
+    // Delete ticket data in local db in case it's corrupted due to jira
+    resetTicket(key){
+        fetch('/api/delete-ticket/' + key, {
+            method: 'GET'
+        }).then(response => {
+                console.log('Ticket reset server response: ', response);
+                this.props.loadSPrintTickets(this.props.sprintId, 1);
+                this.openEditModal(0);
+            }
+        );
     }
 
     // Send ticket update to server
@@ -126,6 +139,7 @@ class EditTicket extends Component {
                 {(this.props.ticketData !== 0) && (
                     <div className="ticket-modal">
                         <div className="close-button" onClick={() => {this.openEditModal(ticket)}}>x</div>
+                        <div className="reset-button" onClick={() => {this.resetTicket(ticketKey)}}></div>
                         <a href={url}><h3>{ticketKey} {summary}</h3></a>
                         <p>Issue type: <b>{issueType}</b> in project <b>{project}</b>, assigned to <b>{assignee}</b></p>
                         <p>Issue status: <b>{status}</b>, with resolution set to <b>{resolution}</b></p>

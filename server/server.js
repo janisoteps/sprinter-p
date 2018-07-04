@@ -214,5 +214,20 @@ app.get('/api/delete-ticket/:id', function (req, res) {
     });
 });
 
+// Shows ticket based on it's key
+app.get('/api/show-ticket/:id', function (req, res) {
+    let ticketKey = req.params.id;
+
+    let sql = `SELECT * FROM sprinter_ticket_table_2 WHERE ticket_key=?`;
+
+
+    db.all(sql, ticketKey, (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        res.send(rows);
+    });
+});
+
 app.use(express.static(__dirname +'./../client')); //serves the index.html
 app.listen(3000); //listens on port 3000 -> http://localhost:3000/

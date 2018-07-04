@@ -122,6 +122,21 @@ tr:hover {background-color: #ddd;}
     text-align: center;
 }
 
+.reset-button{
+    width: 30px;
+    height: 30px;
+    background-size: 24px 24px;
+    background: #ffffff url('../images/baseline-cached-24px.svg') no-repeat center;
+    border-radius: 15px;
+    position: absolute;
+    margin-top: 0px;
+    right: 40px;
+    cursor: pointer;
+    box-shadow: 1px -1px 3px 0 rgba(0, 0, 0, 0.4);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
 .ticket-save-button{
     width: 120px;
     box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.4);
